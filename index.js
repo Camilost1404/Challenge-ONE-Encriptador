@@ -36,19 +36,44 @@ const btnEncriptar = () => {
 // La letra "o" es convertida para "ober"
 // La letra "u" es convertida para "ufat"
 
-const encriptar = (texto) => {
+const encriptar = (textoEncriptado) => {
 
     const codigo = [["a", "ai"], ["e", "enter"], ["i", "imes"], ["o", "ober"], ["u", "ufat"]]
 
     for (let i = 0; i < codigo.length; i++) {
 
-        if (texto.includes(codigo[i][0])) {
-            texto = texto.replaceAll(codigo[i][0], codigo[i][1])
+        if (textoEncriptado.includes(codigo[i][0])) {
+            textoEncriptado = textoEncriptado.replaceAll(codigo[i][0], codigo[i][1])
         }
 
     }
 
-    return texto
+    return textoEncriptado
+}
+
+function btnDesencriptar() {
+    if (validarTexto()) {
+        const textoDesencriptado = desencriptar(texto.value)
+        seccionSinResult.style.display = 'none'
+        seccionResult.style.display = 'flex'
+        mensaje.value = textoDesencriptado
+        texto.value = "";
+    }
+}
+
+
+function desencriptar(textoDesencriptdo) {
+    const codigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+
+    for (let i = 0; i < codigo.length; i++) {
+
+        if (textoDesencriptdo.includes(codigo[i][1])) {
+            textoDesencriptdo = textoDesencriptdo.replaceAll(codigo[i][1], codigo[i][0])
+        }
+
+    }
+
+    return textoDesencriptdo
 }
 
 const copiar = () => {
