@@ -1,12 +1,12 @@
-const texto = document.querySelector('.text-area')
-const mensaje = document.querySelector(".mensaje");
-const seccionSinResult = document.querySelector('.seccion-sin-resultado')
-const seccionResult = document.querySelector('.seccion-con-resultado')
-const copia = document.querySelector(".copiar");
+const texto = document.querySelector('.input-textarea')
+const mensaje = document.querySelector(".result-textarea");
+const seccionSinResult = document.querySelector('.no-result')
+const seccionResult = document.querySelector('.result')
+// const copia = document.querySelector(".copiar");
 
 const validarTexto = () => {
     let textoEscrito = texto.value;
-    let validador = textoEscrito.match(/^[a-z]*$/);
+    let validador = textoEscrito.match(/^[a-z\s]*$/);
 
     if (validador === null) {
         alert("Solo son permitidas letras minúsculas y sin acentos")

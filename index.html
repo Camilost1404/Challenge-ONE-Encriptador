@@ -10,16 +10,13 @@
     </head>
 
     <body>
-
-
-        <header>
-            <img class="logo" src="./assets/Logo.png" alt="Logo" width="120" height="48">
+        <header class="header">
+            <img class="logo" src="./assets/Logo.png" alt="Logo">
         </header>
 
-        <main>
-            <section class="seccion-principal">
-                <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese el texto aquí"
-                    maxlength="250"></textarea>
+        <main class="main">
+            <section class="input-section">
+                <textarea class="input-textarea" placeholder="Ingrese el mensaje aquí" maxlength="250"></textarea>
                 <div class="container-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
@@ -28,28 +25,30 @@
                     </svg>
                     <p class="informacion">Solo letras minúsculas y sin acentos</p>
                 </div>
-                <div class="botones">
-                    <button class="btn-encriptar" onclick="btnEncriptar()">Encriptar</button>
-                    <button class="btn-desencriptar" onclick="btnDesencriptar()">Desencriptar</button>
+                <div class="input-buttons">
+                    <button class="encrypt-button" onclick="btnEncriptar()">Encriptar</button>
+                    <button class="decrypt-button" onclick="btnDesencriptar()">Desencriptar</button>
                 </div>
             </section>
-            <section class="seccion-sin-resultado">
-                <img src="./assets/Muñeco.png" alt="Muñeco" class="muñeco">
-                <div class="sin-resultado">
-                    <p class="informacion-sin-resultado">Ningún mensaje fue encontrado</p>
-                    <p class="informacion-sin-resultado-2">Ingresa el texto que desees encriptar o desencriptar</p>
+
+            <section class="output-section">
+                <div class="no-result">
+                    <img src="./assets/Muñeco.png" alt="No Message">
+                    <p class="no-result-text">No se encontró ningún mensaje.</p>
+                    <p class="no-result-more-text">Por favor, ingrese un mensaje.</p>
                 </div>
-            </section>
-            <section class="seccion-con-resultado">
-                <textarea class="mensaje" rows="10" disabled></textarea>
-                <div class="botones">
-                    <button class="copiar" onclick="copiar()">Copiar</button>
+                <div class="result">
+                    <textarea class="result-textarea" disabled></textarea>
+                    <button class="copy-button" onclick="copiar()">Copiar</button>
                 </div>
             </section>
         </main>
 
-        <script src="index.js"></script>
+        <footer class="footer">
+            <p class="footer-text">Derechos reservados &copy; Andrés Camilo Torres Rosales - ONE</p>
+        </footer>
 
+        <script src="index.js"></script>
     </body>
 
 </html>
